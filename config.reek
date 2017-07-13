@@ -1,0 +1,9 @@
+UtilityFunction:
+  exclude:
+    - "ApplicationHelper#full_title"
+FeatureEnvy:
+  enabled: false
+IrresponsibleModule:
+  enabled: false
+TooManyStatements:
+  enabled: false

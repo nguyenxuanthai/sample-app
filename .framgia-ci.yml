@@ -7,7 +7,7 @@ test:
   brakeman:
     command: brakeman -o .framgia-ci-reports/brakeman.html -o .framgia-ci-reports/brakeman.json
   reek:
-    command: reek --format html > .framgia-ci-reports/reek.html
+    command: reek --config config.reek --format html > .framgia-ci-reports/reek.html
   rubocop:
     command: bundle exec rubocop --require rubocop/formatter/checkstyle_formatter --format RuboCop::Formatter::CheckstyleFormatter --no-color --rails --out .framgia-ci-reports/rubocop.xml app/ lib/
   scss-lint:
@@ -15,4 +15,4 @@ test:
   eslint:
     command: eslint --ext .js --ext .jsx --format=checkstyle -c .eslintrc.json --output-file=.framgia-ci-reports/eslint.xml app/
   rails_best_practices:
-    command: rails_best_practices -e "db/schema.rb,db/migrate,vendor,app/models/application_record.rb" --format html --config config/rails_best_practices.yml --output-file .framgia-ci-reports/rails_best_practices.html app/
+    command: rails_best_practices --format html -c config/rails_best_practices.yml --output-file .framgia-ci-reports/rails_best_practices.html app/
