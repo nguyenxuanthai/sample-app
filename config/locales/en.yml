@@ -33,11 +33,12 @@ en:
   rails_tutorial: "Ruby on Rails Tutorial"
   static_pages:
     home:
-      title: "Home"
+      title: "Welcome to the Sample App"
       home_page: "This is the home page for the"
       sample_application: "sample application."
       sample_app: "Sample App"
       link1: "Ruby on Rails Tutorial"
+      sign_up_now: "Sign up now!"
     help:
       title: "Help"
       Help: "Help"
@@ -60,8 +61,33 @@ en:
       sentences2: "This is the sample application for the tutorial."
     contact:
       title: "Contact"
-      Contact: "Contact"
+      contact: "Contact"
       sentences1: "Contact the Ruby on Rails Tutorial about the sample app at the"
       link1: "contact page"
     application:
       title: "Ruby on Rails Tutorial Sample App"
+
+  layout:
+    footer:
+      the: "The"
+      by: "by"
+      about: "About"
+      contact: "Contact"
+      link1: "Ruby on Rails Tutorial"
+      link2: "Michael Hartl"
+      link3: "News"
+    header:
+      sample_app: "sample app"
+      home: "Home"
+      help: "Help"
+      log_in: "Log in"
+
+  helper:
+    applicationhelper:
+      ruby_sample: "Ruby on Rails Tutorial Sample App"
+
+  view:
+    new:
+      title: "Sign up"
+      sign_up: "Sign up"
+      sentences1: "This will be a signup page for new users."
