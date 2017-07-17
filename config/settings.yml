@@ -1,0 +1,4 @@
+user:
+  validates_name: 50
+  validates_email: 250
+  validates_password: 6
