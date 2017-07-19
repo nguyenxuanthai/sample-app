@@ -1,11 +1,29 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to t("layout.header.sample_app"), root_path, class: "logo" %>
+    <%= link_to t("layout.header.sample_app"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("layout.hedare.home"), root_path %></li>
-        <li><%= link_to t("layout.hedare.help"), help_path %></li>
-        <li><%= link_to t("layout.hedare.log_in"), "#" %></li>
+        <li><%= link_to t("layout.header.home"), root_path %></li>
+        <li><%= link_to t("layout.header.help"), root_path %></li>
+        <% if logged_in? %>
+          <li><%= link_to t("layout.header.users"), "#" %></li>
+          <li class="dropdown">
+            <%= link_to "#", class: "dropdown-toggle",
+              data: {toggle: "dropdown"} do %>
+              <%= t "layout.header.account" %> <b class="caret"></b>
+            <% end %>
+            <ul class="dropdown-menu">
+              <li><%= link_to t("layout.header.profile"), current_user %></li>
+              <li><%= link_to t("layout.header.settings"), "#" %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to t("layout.header.log_in"), logout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to t("layout.header.log_out"), login_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
