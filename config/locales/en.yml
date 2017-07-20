@@ -30,6 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  invalid_email: "Invalid email/password combination"
   rails_tutorial: "Ruby on Rails Tutorial"
   static_pages:
     home:
@@ -81,6 +82,12 @@ en:
       home: "Home"
       help: "Help"
       log_in: "Log in"
+      profile: "Profile"
+      settings: "Settings"
+      log_out: "Log out"
+      log_in: "Log in"
+      account: "Account"
+      users: "Users"
 
   helper:
     applicationhelper:
@@ -107,3 +114,11 @@ en:
       new:
         confirmation: "Confirmation"
         create_my_account: "Create my account"
+
+  app:
+    views:
+      sessions:
+        new:
+          log_in: "Log in"
+          sign_up_now: "Sign up now!"
+          new_user: "New user?"
