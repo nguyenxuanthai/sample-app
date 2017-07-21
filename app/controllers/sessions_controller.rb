@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(session[:password])
       login_success user
+      redirect_back_or user
     else
       login_fail
     end
@@ -19,7 +20,6 @@ class SessionsController < ApplicationController
   def login_success user
     log_in user
     params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-    redirect_to user
   end
 
   def login_fail

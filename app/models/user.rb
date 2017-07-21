@@ -1,13 +1,18 @@
 class User < ApplicationRecord
+  include SessionsHelper
   attr_accessor :remember_token
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates :name,  presence: true, length: {maximum: Settings.user.validates_name}
-  validates :email, presence: true, length: {maximum: Settings.user.validates_email},
+  validates :name,  presence: true,
+    length: {maximum: Settings.user.validates_name}
+  validates :email, presence: true,
+    length: {maximum: Settings.user.validates_email},
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
-  validates :password, presence: true, length: {minimum: Settings.user.validates_password}
+  validates :password, presence: true,
+    length: {minimum: Settings.user.validates_password},
+    allow_nil: true
 
   before_save :email_downcase
 
@@ -41,6 +46,10 @@ class User < ApplicationRecord
 
   def forget
     update_attributes remember_digest: nil
+  end
+
+  def current_user? user
+    self == user
   end
 
   private

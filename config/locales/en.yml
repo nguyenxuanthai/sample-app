@@ -103,6 +103,9 @@ en:
     users:
       sample_app: "Welcome to the Sample App!"
       not_found: "User not found !"
+      profile_updated: "Profile updated"
+      please_log_in: "Please log in."
+      user_deleted: "User deleted"
 
   views:
     shared:
@@ -123,3 +126,18 @@ en:
           sign_up_now: "Sign up now!"
           new_user: "New user?"
           remember_me: "Remember me on this computer"
+
+      users:
+        user:
+          delete: "delete"
+          you_sure: "Are you sure?"
+
+        index:
+          title: "All users"
+          all_users: "All users"
+
+        edit:
+          title: "Edit user"
+          update_your_profile: "Update your profile"
+          confirmation: "Confirmation"
+          save_changes: "Save changes"
