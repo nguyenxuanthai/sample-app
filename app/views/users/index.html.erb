@@ -1,0 +1,10 @@
+<% provide :title, t("app.views.users.index.title") %>
+<h1><%= t "app.views.users.index.all_users" %></h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <%= render @users %>
+</ul>
+
+<%= will_paginate %>
