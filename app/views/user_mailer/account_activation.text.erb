@@ -1,0 +1,5 @@
+<%= t "app.views.user_mailer.account_activation_text.hi"%><%= @user.name %>,
+
+<%= t "app.views.user_mailer.account_activation_text.welcome_sign" %>
+
+<%= edit_account_activation_url @user.activation_token, email: @user.email %>

@@ -34,6 +34,7 @@ en:
   rails_tutorial: "Ruby on Rails Tutorial"
   static_pages:
     home:
+      home: "Home"
       title: "Welcome to the Sample App"
       home_page: "This is the home page for the"
       sample_application: "sample application."
@@ -106,6 +107,7 @@ en:
       profile_updated: "Profile updated"
       please_log_in: "Please log in."
       user_deleted: "User deleted"
+      activate_email: "Please check your email to activate your account."
 
   views:
     shared:
@@ -127,6 +129,16 @@ en:
           new_user: "New user?"
           remember_me: "Remember me on this computer"
 
+      user_mailer:
+        account_activation_html:
+          title: "Sample App"
+          hi: "Hi"
+          welcome_sign: "Welcome to the Sample App! Click on the link below to activate your account:"
+          activate: "Activate"
+        account_activation_text:
+          hi: "Hi"
+          welcome_sign: "Welcome to the Sample App! Click on the link below to activate your account:"
+
       users:
         user:
           delete: "delete"
@@ -141,3 +153,11 @@ en:
           update_your_profile: "Update your profile"
           confirmation: "Confirmation"
           save_changes: "Save changes"
+
+    controllers:
+      account_activations:
+        account_activated: "Account activated!"
+        invalid_activation_link: "Invalid activation link"
+
+      sessions:
+        login_fails: "Account not activated. Check your email for the activation link."
