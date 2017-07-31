@@ -6,7 +6,8 @@
     <%= render "form", user: @user %>
     <div class="gravatar_edit">
       <%= gravatar_for @user %>
-      <a href="http://gravatar.com/emails" target="_blank">change</a>
+      <%= link_to t("app.views.users.edit.change"), "http://gravatar.com/emails",
+        target: "_blank" %>
     </div>
   </div>
 </div>

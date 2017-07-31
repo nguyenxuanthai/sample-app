@@ -1,5 +1,11 @@
+max_content: 140
 user:
   validates_name: 50
   validates_email: 250
   validates_password: 6
   time_password_reset: 2
+user_info:
+  gravatar_size: 50
+picture_size: 5
+micropost_size: 5
+picture_type: "image/jpeg,image/gif,image/png"

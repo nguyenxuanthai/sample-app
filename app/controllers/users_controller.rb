@@ -25,10 +25,15 @@ class UsersController < ApplicationController
   end
 
   def show
+    if user
+      @microposts = user.microposts.order_desc.paginate page: params[:page]
+    else
+      flash[:danger] = t "controllers.users.url_invaild"
+      redirect_to root_url
+    end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if user.update_attributes user_params
@@ -46,18 +51,10 @@ class UsersController < ApplicationController
     redirect_to login_url
   end
 
-  def correct_user
-    redirect_to root_url unless user.current_user? current_user
-  end
-
   def destroy
     user.destroy
     flash[:success] = t "controllers.users.user_deleted"
     redirect_to users_url
-  end
-
-  def admin_user
-    redirect_to root_url unless current_user.admin?
   end
 
   def find_user
@@ -71,6 +68,14 @@ class UsersController < ApplicationController
   private
 
   attr_reader :user
+
+  def correct_user
+    redirect_to root_url unless user.current_user? current_user
+  end
+
+  def admin_user
+    redirect_to root_url unless current_user.admin?
+  end
 
   def user_params
     params.require(:user).permit :name, :email, :password,
