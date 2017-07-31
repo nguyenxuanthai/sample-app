@@ -2,3 +2,4 @@ user:
   validates_name: 50
   validates_email: 250
   validates_password: 6
+  time_password_reset: 2

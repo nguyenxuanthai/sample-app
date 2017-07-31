@@ -1,7 +1,8 @@
 <% if user.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
-      <%= t "views.shared.error_messages.form_contains" %> <%= pluralize user.errors.count,
+      <%= t "views.shared.error_messages.form_contains" %>
+      <%= pluralize user.errors.count,
         t("views.shared.error_messages.error") %>.
     </div>
     <ul>

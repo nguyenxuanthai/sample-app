@@ -121,6 +121,11 @@ en:
         create_my_account: "Create my account"
 
   app:
+    mailers:
+      user:
+        account_activation: "Account activation"
+        password_reset: "Password reset"
+
     views:
       sessions:
         new:
@@ -128,6 +133,7 @@ en:
           sign_up_now: "Sign up now!"
           new_user: "New user?"
           remember_me: "Remember me on this computer"
+          forgot_password: "(forgot password)"
 
       user_mailer:
         account_activation_html:
@@ -135,9 +141,24 @@ en:
           hi: "Hi"
           welcome_sign: "Welcome to the Sample App! Click on the link below to activate your account:"
           activate: "Activate"
+
         account_activation_text:
           hi: "Hi"
           welcome_sign: "Welcome to the Sample App! Click on the link below to activate your account:"
+
+        password_reset_text:
+          sentences1: "To reset your password click the link below:"
+          sentences2: "This link will expire in two hours."
+          sentences3: "If you did not request your password to be reset, please ignore this email and
+            your password will stay as it is."
+
+        password_reset_html:
+          header: "Password reset"
+          sentences1: "To reset your password click the link below:"
+          sentences2: "This link will expire in two hours."
+          sentences3: "If you did not request your password to be reset, please ignore this email and
+            your password will stay as it is."
+          reset_password: "Reset password"
 
       users:
         user:
@@ -154,6 +175,18 @@ en:
           confirmation: "Confirmation"
           save_changes: "Save changes"
 
+      password_resets:
+        new:
+          title: "Forgot password"
+          header: "Forgot password"
+          submit: "Submit"
+
+        edit:
+          title: "Reset password"
+          header: "Reset password"
+          update_password: "Update password"
+          confirmation: "Confirmation"
+
     controllers:
       account_activations:
         account_activated: "Account activated!"
@@ -161,3 +194,10 @@ en:
 
       sessions:
         login_fails: "Account not activated. Check your email for the activation link."
+
+      password_resets:
+        reset_password: "Email sent with password reset instructions"
+        email_notfound: "Email address not found"
+        cant_empty: "can't be empty"
+        password_reseted: "Password has been reset."
+        password_expired: "Password reset has expired."
