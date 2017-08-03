@@ -9,3 +9,5 @@ TooManyStatements:
   enabled: false
 Attribute:
   enabled: false
+TooManyMethods:
+  max_methods: 20

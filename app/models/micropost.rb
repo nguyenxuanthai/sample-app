@@ -7,6 +7,11 @@ class Micropost < ApplicationRecord
 
   scope :order_desc, ->{order created_at: :DESC}
 
+  microposts_feed = lambda do |user|
+    where user_id: user.following_ids << user.id
+  end
+  scope :microposts_feed, microposts_feed
+
   mount_uploader :picture, PictureUploader
 
   def picture_size

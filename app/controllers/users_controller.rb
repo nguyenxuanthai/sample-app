@@ -27,6 +27,10 @@ class UsersController < ApplicationController
   def show
     if user
       @microposts = user.microposts.order_desc.paginate page: params[:page]
+      render locals: {
+        relationship_build: relationship_build,
+        relationship_destroy: relationship_destroy
+      }
     else
       flash[:danger] = t "controllers.users.url_invaild"
       redirect_to root_url
@@ -65,9 +69,31 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def following
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render "show_follow"
+  end
+
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render "show_follow"
+  end
+
   private
 
   attr_reader :user
+
+  def relationship_destroy
+    current_user.active_relationships.find_by followed_id: user.id
+  end
+
+  def relationship_build
+    current_user.active_relationships.build
+  end
 
   def correct_user
     redirect_to root_url unless user.current_user? current_user
