@@ -7,5 +7,5 @@ user:
 user_info:
   gravatar_size: 50
 picture_size: 5
-micropost_size: 5
+micropost_size: 50
 picture_type: "image/jpeg,image/gif,image/png"

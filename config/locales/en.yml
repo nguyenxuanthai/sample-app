@@ -146,6 +146,10 @@ en:
           ago : "ago."
 
       shared:
+        stats:
+          following: "following"
+          followers: "followers"
+
         microposts:
           new_micropost: "Compose new micropost..."
           post: "post"
@@ -187,6 +191,16 @@ en:
           reset_password: "Reset password"
 
       users:
+        showfollow:
+          view_my_profile: "view my profile"
+          microposts: "Microposts:"
+
+        follow:
+          follow: "Follow"
+
+        unfollow:
+          unfollow: "Unfollow"
+
         show:
           microposts: "Microposts"
 
