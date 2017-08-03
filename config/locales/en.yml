@@ -41,6 +41,7 @@ en:
       sample_app: "Sample App"
       link1: "Ruby on Rails Tutorial"
       sign_up_now: "Sign up now!"
+      micropost_feed: "Micropost Feed"
     help:
       title: "Help"
       Help: "Help"
@@ -108,6 +109,7 @@ en:
       please_log_in: "Please log in."
       user_deleted: "User deleted"
       activate_email: "Please check your email to activate your account."
+      url_invaild: "Error!"
 
   views:
     shared:
@@ -121,12 +123,36 @@ en:
         create_my_account: "Create my account"
 
   app:
+    assets:
+      javascripts:
+        validate:
+          max_size: "Maximum file size is 5MB. Please choose a smaller file."
+
+    models:
+      microposts:
+        shouldbe_than: "should be less than 5MB"
+
     mailers:
       user:
         account_activation: "Account activation"
         password_reset: "Password reset"
 
     views:
+      microposts:
+        microposts:
+          delete: "delete"
+          you_sure: "You sure?"
+          post: "Post"
+          ago : "ago."
+
+      shared:
+        microposts:
+          new_micropost: "Compose new micropost..."
+          post: "post"
+        user_info:
+          my_profile: "view my profile"
+          micropost: "micropost"
+
       sessions:
         new:
           log_in: "Log in"
@@ -161,6 +187,9 @@ en:
           reset_password: "Reset password"
 
       users:
+        show:
+          microposts: "Microposts"
+
         user:
           delete: "delete"
           you_sure: "Are you sure?"
@@ -174,6 +203,7 @@ en:
           update_your_profile: "Update your profile"
           confirmation: "Confirmation"
           save_changes: "Save changes"
+          change: "change"
 
       password_resets:
         new:
@@ -188,6 +218,10 @@ en:
           confirmation: "Confirmation"
 
     controllers:
+      microposts:
+        micropost_created: "Micropost created!"
+        micropost_deleted: "Micropost deleted"
+
       account_activations:
         account_activated: "Account activated!"
         invalid_activation_link: "Invalid activation link"
@@ -201,3 +235,6 @@ en:
         cant_empty: "can't be empty"
         password_reseted: "Password has been reset."
         password_expired: "Password reset has expired."
+
+      application_controller:
+        log_in: "Please log in."
